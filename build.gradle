@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+mainClassName = 'envoy.Generator'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.apache.kafka:kafka-clients:1.1.1")
+
+    compile("org.apache.commons:commons-text:1.6")
+
+    compile("org.freemarker:freemarker:2.3.28")
+
+    compile("org.slf4j:slf4j-log4j12:1.7.5")
+}
+
+tasks.eclipse.dependsOn(cleanEclipse)
